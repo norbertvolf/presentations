@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<style>
+			.slides {
+				background-image: url("http://localhost/images/logo.png");
+				background-position: 0 0;
+				background-repeat: no-repeat;
+			}
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Git</h1>
+
+					<p>Git je distribuovaný systém správy verzí</p>
+				</section>
+
+				<section>
+					<h1>Dokumentace</h1>
+
+					<p>Všechny příkazy i popis práce s větvemi je popsána v knize
+					<a href="https://git-scm.com/book/en/v2">Pro Git</a>, tuto knihu si můžete
+					přečíst i v <a href="https://git-scm.com/book/cs/v1">češtině</a>. Pro práci
+					vývojáře jsou důležité první tři kapitoly. Pokud se chcete
+					dozvědět něco o kořenech Gitu tak mrkněte na
+					<a href="https://youtu.be/4XpnKHJAok8">tuhle  přednášku</a>.</p>
+				</section>
+
+				<section>
+					<h1>Historie</h1>
+
+					<ul>
+						<li>Git vytvořil Linus Torvalds v roce 2005</li>
+						<li>Git vznikl, protože neexistoval nástroj vhodný pro vývoj jádra</li>
+						<li>Nyní ho vyvíjí Junio Hamano, japonský developer</li>
+						<li>Dnes široce používaný včetně největších softwarových firem</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Diff &amp; patch</h1>
+
+					<p><code><pre>
+
+	diff -u original.c new.c &gt; original.patch
+	patch original.c &lt; original.patch
+					</pre></code></p>
+				</section>
+
+				<section>
+					<h1>Cesta changestu</h1>
+
+					<p>Soubor na lokalním disku</p>
+					<p><code>git commit</code></p>
+					<p> Lokální databáze gitu </p>
+					<p><code>git push</code></p>
+					<p> Vzdálená databáze gitu</p>
+				</section>
+
+				<section>
+						<h1>Git je distribuovaný</h1>
+
+						<ul>
+						<li>Všechny operace nutné pro vývoj probíhají proti lokální databázi</li>
+						<li>Každý repozitář obsahuje kopii historie</li>
+						<li>Není žádný centrální repozitář</li>
+						<li>Není žádné pevně definované workflow</li>
+						</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Důležité příkazy</h2>
+						<a href="http://overapi.com/git">http://overapi.com/git</a>
+					</section>
+					<section>
+						<h2>Lokální změny</h2>
+						<ul>
+							<li><a href="https://git-scm.com/docs/git-add"><code>git add</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-commit"><code>git commit</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-log"><code>git log</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-diff"><code>git diff</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-status"><code>git status</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-reset"><code>git reset</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-stash"><code>git stash</code></a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Práce s větvemí</h2>
+						<ul>
+							<li><a href="https://git-scm.com/docs/git-checkout"><code>git checkout</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-merge"><code>git merge</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-rebase"><code>git rebase</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-cherry-pick"><code>git cherry-pick</code></a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Vzdálené repozitáře</h2>
+						<ul>
+							<li><a href="https://git-scm.com/docs/git-push"><code>git push</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-fetch"><code>git fetch</code></a></li>
+							<li><a href="https://git-scm.com/docs/git-remote"><code>git remote</code></a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h1>Uživatelské rozhraní</h1>
+					<ul>
+						<li>CLI</li>
+						<li>Web UI</li>
+						<li>GUI</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Konfigurace a databáze</h1>
+
+					<ul>
+						<li>Adresář .git v projektu </li>
+						<li>konfigurace v ~/.gitconfig a .git/config</li>
+						<li>.gitignore obsahuje definici ignorovaných souborů</li>
+						<li>vlastní přikazy git-command</li>
+						<li>v .git/hooks jsou "hook" skripty</li>
+					</ul>
+				</section>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
